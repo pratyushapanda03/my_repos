@@ -1,0 +1,18 @@
+ A Student Portal Application is a web or mobile app built to help students interact with their academic system. It usually provides access to grades, course materials, registration, fees, messaging, and more.
+
+A student portal is a secure website or application where students can:
+
+- View their course schedule
+
+- Check grades and transcripts
+
+- Register for classes
+
+- Communicate with teachers or advisors
+
+- Submit assignments
+
+- Access online learning tools or library resources
+
+- Pay tuition or fees
+
