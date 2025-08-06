@@ -1,0 +1,4 @@
+Name: Pratyusha Kumari Panda
+Course: Bachelor of Computer Application
+One thing I learned about GitHub: I learned that GitHub allows multiple people to collaborate on the same project by tracking changes to code, making it easier to manage teamwork and maintain project history.
+
