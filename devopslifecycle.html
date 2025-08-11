@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DevOps Lifecycle — Visual Guide</title>
+<style>
+  :root{ --bg:#f6fafc; --card:#fff; --accent:#0366d6; --muted:#6b7280; }
+  body{ margin:0; font-family: Inter, Arial, sans-serif; background:var(--bg); color:#102a43; }
+  header{ padding:24px; text-align:center; }
+  .wrap{ max-width:980px; margin:18px auto; padding:18px; }
+  .card{ background:var(--card); border-radius:12px; box-shadow:0 6px 20px rgba(16,38,66,0.06); padding:18px; }
+  .layout{ display:grid; grid-template-columns: 380px 1fr; gap:20px; align-items:start; }
+  @media (max-width:880px){ .layout{ grid-template-columns: 1fr; } svg{ width:100% !important; height:auto !important; } }
+  .stages-list{ padding:10px; }
+  .stage{ display:flex; gap:12px; padding:10px; border-radius:10px; align-items:flex-start; }
+  .bullet{ min-width:10px; height:10px; border-radius:50%; background:var(--accent); margin-top:6px; }
+  .stage h3{ margin:0; font-size:16px; } .stage p{ margin:6px 0 0; color:var(--muted); font-size:14px; }
+  footer{ text-align:center; color:var(--muted); font-size:13px; padding:14px 0 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>DevOps Lifecycle — Visual Guide</h1>
+  <p>Plan → Develop → Build → Test → Release → Deploy → Operate → Monitor</p>
+</header>
+
+<div class="wrap">
+  <div class="card layout">
+    <!-- SVG diagram: vertical ovals with arrows -->
+    <svg viewBox="0 0 380 920" width="380" height="920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DevOps lifecycle diagram">
+      <defs>
+        <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="6" stdDeviation="10" flood-opacity="0.08"/>
+        </filter>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0 L8 4 L0 8 z" fill="#0b2540"></path>
+        </marker>
+      </defs>
+
+      <!-- Plan -->
+      <ellipse cx="190" cy="70" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" filter="url(#soft)"/>
+      <text x="190" y="76" font-size="14" text-anchor="middle" fill="#0b2540" font-weight="600">PLAN</text>
+
+      <!-- Develop -->
+      <line x1="190" y1="104" x2="190" y2="130" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/>
+      <ellipse cx="190" cy="166" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" />
+      <text x="190" y="172" font-size="13" text-anchor="middle" fill="#0b2540">Develop</text>
+
+      <!-- Build -->
+      <line x1="190" y1="200" x2="190" y2="228" stroke="#94a3b8" stroke-width="1.6"/>
+      <ellipse cx="190" cy="262" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" />
+      <text x="190" y="268" font-size="13" text-anchor="middle" fill="#0b2540">Build</text>
+
+      <!-- Test -->
+      <line x1="190" y1="296" x2="190" y2="322" stroke="#94a3b8" stroke-width="1.6"/>
+      <ellipse cx="190" cy="358" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" />
+      <text x="190" y="364" font-size="13" text-anchor="middle" fill="#0b2540">Test</text>
+
+      <!-- Release -->
+      <line x1="190" y1="392" x2="190" y2="420" stroke="#94a3b8" stroke-width="1.6"/>
+      <ellipse cx="190" cy="456" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" />
+      <text x="190" y="462" font-size="13" text-anchor="middle" fill="#0b2540">Release</text>
+
+      <!-- Deploy -->
+      <line x1="190" y1="490" x2="190" y2="518" stroke="#94a3b8" stroke-width="1.6"/>
+      <ellipse cx="190" cy="554" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" />
+      <text x="190" y="560" font-size="13" text-anchor="middle" fill="#0b2540">Deploy</text>
+
+      <!-- Operate -->
+      <line x1="190" y1="588" x2="190" y2="616" stroke="#94a3b8" stroke-width="1.6"/>
+      <ellipse cx="190" cy="652" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" />
+      <text x="190" y="658" font-size="13" text-anchor="middle" fill="#0b2540">Operate</text>
+
+      <!-- Monitor -->
+      <line x1="190" y1="686" x2="190" y2="714" stroke="#94a3b8" stroke-width="1.6"/>
+      <ellipse cx="190" cy="748" rx="90" ry="34" fill="#fff" stroke="#334155" stroke-width="1.6" />
+      <text x="190" y="754" font-size="13" text-anchor="middle" fill="#0b2540">Monitor</text>
+
+      <!-- loopback arrow from Monitor back to Plan -->
+      <path d="M190 780 C190 810, 320 810, 320 560" stroke="#0b2540" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+      <path d="M320 560 C320 420, 320 220, 190 140" stroke="#0b2540" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+    </svg>
+
+    <div class="stages-list">
+      <h2 style="margin-top:0; margin-bottom:6px;">Stage explanations</h2>
+
+      <div class="stage">
+        <div class="bullet" style="background:#ff7a59"></div>
+        <div>
+          <h3>Plan</h3>
+          <p>Decide what to build, priorities, and how the team will work.</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bullet"></div>
+        <div>
+          <h3>Develop</h3>
+          <p>Write the application code and collaborate with teammates.</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bullet" style="background:#f59e0b"></div>
+        <div>
+          <h3>Build</h3>
+          <p>Turn code into runnable artifacts (compile/package) and run quick checks.</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bullet" style="background:#10b981"></div>
+        <div>
+          <h3>Test</h3>
+          <p>Run automated tests to make sure the software works as expected.</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bullet" style="background:#7c3aed"></div>
+        <div>
+          <h3>Release</h3>
+          <p>Prepare a version for customers and mark the release (tags, notes).</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bullet" style="background:#0366d6"></div>
+        <div>
+          <h3>Deploy</h3>
+          <p>Put the release into production (servers/cloud) so users can use it.</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bullet" style="background:#ef4444"></div>
+        <div>
+          <h3>Operate</h3>
+          <p>Keep the service running, handle incidents, and manage resources.</p>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="bullet" style="background:#64748b"></div>
+        <div>
+          <h3>Monitor</h3>
+          <p>Measure performance and errors; feed that info back into planning.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  Tip: open this file in your browser. To make it live, upload to GitHub and deploy on Vercel (instructions below).
+</footer>
+</body>
+</html>
